@@ -24,4 +24,4 @@ For datasets assembling you should use the bibis package (https://github.com/aut
 ### For GENA-LM and NT
 a
 ### For DNABERT-2
-a
+The scripts for DNABERT-2 fine-tuning is based on the original scripts available at the link (https://github.com/MAGICS-LAB/DNABERT_2) and are distributed in accordance with the license.
