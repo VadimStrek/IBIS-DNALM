@@ -34,11 +34,12 @@ Every transcription factor (TF) should be used for fine-tuning individually.
 ```
 cd DNABERT-2
 export DATA_PATH=$path/to/data/folder  # folder with csv datasets of current TF
+export TF=$name/of/TF
 python train_test.py \
     --model_name_or_path zhihan1996/DNABERT-2-117M \
     --data_path  ${DATA_PATH} \
     --kmer -1 \
-    --run_name results \
+    --run_name ${TF} \
     --model_max_length 500 \
     --per_device_train_batch_size 512 \
     --per_device_eval_batch_size 64 \
@@ -47,7 +48,7 @@ python train_test.py \
     --num_train_epochs 5 \
     --fp16 \
     --save_steps 200 \
-    --output_dir output \
+    --output_dir ${TF}_out \
     --evaluation_strategy epoch \
     --save_strategy epoch \
     --overwrite_output_dir True \
