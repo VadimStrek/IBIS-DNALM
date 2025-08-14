@@ -30,11 +30,11 @@ The scripts for DNABERT-2 fine-tuning is based on the original scripts available
 
 Before fine-tuning, make sure that for every transcription factor you have 3 csv files of your dataset: train.csv, dev.csv, and test.csv. The model is trained on train.csv and is evaluated on the dev.csv file; after the training, the best model file is loaded and be evaluated on test.csv. Files dev.csv and test.csv may be the same. All csv files with data should have head named `sequence, label` in the 1st row and DNA sequence and class label in other rows.
 
-Every transcription factor should be used for fine-tuning individually.
+Every transcription factor (TF) should be used for fine-tuning individually.
 ```
 cd DNABERT-2
-export DATA_PATH=$path/to/data/folder  # folder with csv datasets
-python train.py \
+export DATA_PATH=$path/to/data/folder  # folder with csv datasets of current TF
+python train_test.py \
     --model_name_or_path zhihan1996/DNABERT-2-117M \
     --data_path  ${DATA_PATH} \
     --kmer -1 \
@@ -53,5 +53,4 @@ python train.py \
     --overwrite_output_dir True \
     --log_level info \
     --find_unused_parameters False
-python test.py
 ```
