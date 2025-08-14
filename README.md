@@ -22,7 +22,9 @@ Data packages used in the challenge are available at the link: https://zenodo.or
 For datasets assembling you should use the bibis package (https://github.com/autosome-ru/ibis-challenge)
 ## Fine-tuning
 ### For GENA-LM and NT
-a
+Before fine-tuning, make sure that current folder contains the folder 'datasets' with the HTS and CHS+gHTS data files in parquet.gzip format, and folder 'test' with HTS, SMS and PBM data files in fasta format. All parquet.gzip files should represent a dataframe with columns `seq, group, label` in the 1st row and DNA sequence, group (train or val) and class label in other rows.
+
+For each discipline (A2G and G2A) all transcription factors are used steadily during fine-tuning.
 ### For DNABERT-2
 The scripts for DNABERT-2 fine-tuning is based on the original scripts available at the link (https://github.com/MAGICS-LAB/DNABERT_2) and are distributed in accordance with the license.
 
