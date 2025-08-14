@@ -193,6 +193,7 @@ def calculate_metric_with_sklearn(predictions: np.ndarray, labels: np.ndarray):
     valid_labels = labels[valid_mask]
     return {
         "accuracy": sklearn.metrics.accuracy_score(valid_labels, valid_predictions),
+        "auroc": sklearn.metrics.roc_auc_score(valid_labels, valid_predictions),
         "f1": sklearn.metrics.f1_score(
             valid_labels, valid_predictions, average="macro", zero_division=0
         ),
