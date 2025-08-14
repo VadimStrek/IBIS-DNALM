@@ -34,8 +34,9 @@ Every transcription factor (TF) should be used for fine-tuning individually.
 ```
 cd DNABERT-2
 export DATA_PATH=$path/to/data/folder  # folder with csv datasets of current TF
-export TF=$name/of/TF
-python train_test.py \
+export disc=  # `a2g` or `g2a` discipline
+export TF=  # name of TF from relevant discipline
+python train_test_${disc}.py \
     --model_name_or_path zhihan1996/DNABERT-2-117M \
     --data_path  ${DATA_PATH} \
     --kmer -1 \
